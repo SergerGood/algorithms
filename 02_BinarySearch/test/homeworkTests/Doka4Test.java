@@ -35,7 +35,7 @@ public class Doka4Test {
                 Arguments.of(players, 5000, -1),
                 Arguments.of(players, 1600, 4),
                 Arguments.of(players, 3000, 5),
-                Arguments.of(players, 4000, 6),
+                Arguments.of(players, 4000, 7),
                 Arguments.of(players, 1100, 0)
         );
     }
@@ -63,7 +63,7 @@ public class Doka4Test {
 
 
     static Stream<Arguments> playersForInsert() {
-        return Stream.of(Arguments.of(players, new Doka3.Player(1600, "Shmike"), 4, expectedInsert));
+        return Stream.of(Arguments.of(players, new Doka3.Player(1600, "Shmike"), 5, expectedInsert));
     }
 
 

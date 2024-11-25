@@ -1,5 +1,7 @@
 package examples;
 
+import java.util.Objects;
+
 public class Doka3 {
     public static class Player {
         private final int rating;
@@ -21,6 +23,14 @@ public class Doka3 {
         @Override
         public String toString() {
             return "P{" + nickName + ":" + rating + "}";
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Player player = (Player) o;
+            return rating == player.rating && Objects.equals(nickName, player.nickName);
         }
     }
 

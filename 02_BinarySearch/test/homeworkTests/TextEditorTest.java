@@ -18,7 +18,7 @@ public class TextEditorTest {
                 Arguments.of("Приет мир!", new CharTyped[]{c('в', 3)}, "Привет мир!"),
                 Arguments.of("", new CharTyped[]{c('П', 0)}, "П"),
                 Arguments.of("", new CharTyped[]{c('П', 0), c('Р', 1), c('И', 2)}, "ПРИ"),
-                Arguments.of("ПРИВЕТ, МИР", new CharTyped[]{c('!', 10)}, "ПРИВЕТ, МИР!"),
+                Arguments.of("ПРИВЕТ, МИР", new CharTyped[]{c('!', 11)}, "ПРИВЕТ, МИР!"),
                 Arguments.of("", new CharTyped[]{c('П', 0), c('Р', 0), c('И', 0)}, "ИРП"),
                 Arguments.of("VVV", new CharTyped[]{c('R', 1), c('Y', 0), c('8', 2)}, "YV8RVV"),
                 Arguments.of("SKLBX", new CharTyped[]{c('O', 4), c('I', 2), c('L', 3)}, "SKILLBOX"),

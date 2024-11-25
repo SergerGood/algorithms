@@ -10,14 +10,30 @@ public class TextEditor {
     // Например, если textLength = 3, и text = ‘ш’,’к’,’я’, … еще 252 символа ‘пробел’
 
     public void insertCharacterAt(int position, char c) {
-        // Эта функция должна вставлять символ в строку на позиции position
-        // Например когда пользователь напечатал “При|ет мир!” (этот текст у нас в переменной text)
-        // и его курсор находится между буквами “и” и “е”, и он нажимает “в”.
-        // В этот момент вызывается функция insertCharacterAt(3, “в”), после чего в переменной text значение меняется на “Привет мир!”
+
+        if (position < 0 || position > textLength) {
+            return;
+        }
+
+        for (int i = textLength; i > position; i--) {
+            text[i] = text[i - 1];
+        }
+
+        text[position] = c;
+        textLength++;
     }
 
     public void backspace(int position) {
-        // “Привет Мм|ир!” => “Привет Мир!”
+
+        if (position < 0 || position > textLength) {
+            return;
+        }
+
+        for (int i = position; i < textLength; i++) {
+            text[i] = text[i + 1];
+        }
+
+        textLength--;
     }
 
 
@@ -45,5 +61,6 @@ public class TextEditor {
         for (int i = 0; i < Math.min(text.length(), this.text.length); i++) {
             this.text[i] = text.charAt(i);
         }
+        textLength = text.length();
     }
 }
