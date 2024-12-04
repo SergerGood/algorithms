@@ -1,9 +1,9 @@
 package examples.Dynamic;
 
 public class DynamicArray {
-    int[] values = new int[8];
-    int size = 8;
-    int currentIndex = 0;
+    protected int[] values = new int[8];
+    protected int size = 8;
+    protected int currentIndex = 0;
 
     public void add(int value) {
         values[currentIndex] = value;

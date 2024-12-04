@@ -1,7 +1,7 @@
 package examples.Dynamic;
 
 public class HashMap {
-    class KeyValuePair {
+    protected class KeyValuePair {
         public String key;
         public String value;
 
@@ -11,9 +11,9 @@ public class HashMap {
         }
     }
 
-    KeyValuePair[] entries = new KeyValuePair[8];
-    int size = 8;
-    int numberOfElements = 0;
+    protected KeyValuePair[] entries = new KeyValuePair[8];
+    protected int size = 8;
+    protected int numberOfElements = 0;
 
     int hashFunction(String key) {
         //
@@ -55,7 +55,7 @@ public class HashMap {
         return entry.value;
     }
 
-    int findGoodIndex(String key) {
+    protected int findGoodIndex(String key) {
         int hash = hashFunction(key);
         int index = hash % size;
 
