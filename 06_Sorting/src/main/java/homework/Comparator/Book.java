@@ -40,9 +40,33 @@ public class Book implements Comparable<Book>{
     }
 
     @Override
-    public int compareTo(Book o) {
-        if(this.getYear() != o.getYear())
-            return -1;
-        return 0;
+    public int compareTo(Book book) {
+        int compareAuthor = this.getAuthor().compareTo(book.getAuthor());
+        if (compareAuthor != 0) {
+            return compareAuthor;
+        }
+
+        int compareTitle = this.getTitle().compareTo(book.getTitle());
+        if (compareTitle != 0) {
+            return compareTitle;
+        }
+
+        if (this.getYear() == book.getYear() && this.getPrice() == book.getPrice()) {
+            return 0;
+        }
+
+        if (this.getYear() == book.getYear()) {
+            if (this.getPrice() < book.getPrice()) {
+                return -1;
+            } else {
+                return 1;
+            }
+        } else {
+            if (this.getYear() < book.getYear()) {
+                return -1;
+            } else {
+                return 1;
+            }
+        }
     }
 }
