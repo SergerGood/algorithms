@@ -4,11 +4,28 @@ public class MergeSortRecursion {
 
     // Task #1
     static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        return null; // Please implement
+        if (l1 == null) {
+            return l2;
+        }
+
+        if (l2 == null) {
+            return l1;
+        }
+
+        if (l1.val < l2.val) {
+            l1.next = mergeTwoLists(l1.next, l2);
+            return l1;
+        } else {
+            l2.next = mergeTwoLists(l1, l2.next);
+            return l2;
+        }
     }
 
-    // Task #2
+    // Task #2,
     static ListNode mergeThreeLists(ListNode l1, ListNode l2, ListNode l3) {
-        return null; // Please implement
+        return mergeTwoLists(
+                mergeTwoLists(l1, l2),
+                l3
+        );
     }
 }
